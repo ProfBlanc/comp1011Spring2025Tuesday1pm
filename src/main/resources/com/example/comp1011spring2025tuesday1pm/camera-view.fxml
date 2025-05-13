@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.comp1011spring2025tuesday1pm.CameraController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1011spring2025tuesday1pm.CameraController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Label layoutX="32.0" layoutY="32.0" text="Select A Camera From the List" />
+            <ComboBox fx:id="cameraList" layoutX="30.0" layoutY="57.0" prefHeight="26.0" prefWidth="254.0" />
+            <Label layoutX="30.0" layoutY="124.0" text="Create a new Camera Entry" />
+            <GridPane layoutX="22.0" layoutY="162.0" prefHeight="285.0" prefWidth="266.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onFormSubmit" text="Submit" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="110.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label text="Brand" GridPane.halignment="RIGHT" />
+                  <Label text="Memory" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label text="Color" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <Label text="Resolution" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <Label text="Lens Length" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="brandList" prefWidth="150.0" GridPane.columnIndex="1" />
+                  <ComboBox fx:id="memoryList" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtColor" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtResolution" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtLensLength" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <Button layoutX="230.0" layoutY="83.0" mnemonicParsing="false" onAction="#onCameraListSubmit" text="Submit" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TextArea fx:id="output" layoutX="48.0" layoutY="137.0" prefHeight="200.0" prefWidth="200.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

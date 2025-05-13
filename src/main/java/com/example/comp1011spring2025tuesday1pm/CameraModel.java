@@ -60,7 +60,7 @@ public class CameraModel {
         //if(color.length() < 3)
             //throw new IllegalArgumentException("Color must be at least 3 characters");
 
-        if(Arrays.asList(allowedColors).contains(color.toLowerCase()))
+        if(!Arrays.asList(allowedColors).contains(color.toLowerCase()))
             throw new IllegalArgumentException("Invalid color chosen");
 
         this.color = color;
@@ -102,5 +102,21 @@ public class CameraModel {
     public List<String> getAllMemoryOptions(){
 
         return List.of(Arrays.toString(MemoryOptions.values()));
+    }
+
+    public CameraModel(){}
+
+    public CameraModel(MemoryOptions memory, String color, AvailableBrands brand, double resolution, int lensLength) {
+//        Memory = memory;
+//        this.color = color;
+//        this.brand = brand;
+//        this.resolution = resolution;
+//        this.lensLength = lensLength;
+
+        setMemory(memory);
+        setColor(color);
+        setBrand(brand);
+        setResolution(resolution);
+        setLensLength(lensLength);
     }
 }

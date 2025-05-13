@@ -1,5 +1,9 @@
 package com.example.comp1011spring2025tuesday1pm;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class CameraModel {
 
     /*
@@ -23,17 +27,17 @@ public class CameraModel {
     enum MemoryOptions {GB_32, GB_64, GB_128}  //list of possibilities
     MemoryOptions Memory = MemoryOptions.GB_32;
 
-    private String Color = "Black";
+    private String color = "Black";
     enum AvailableBrands {CANON, POLAROID, SONY}
-    AvailableBrands Brand = AvailableBrands.CANON;
+    AvailableBrands brand = AvailableBrands.CANON;
 
     /** pixels per inch */
     private double resolution;
     /** lens length in millimeters */
     private int lensLength;
 
-    public MemoryOptions getMemory() {
-        return Memory;
+    public String getMemory() {
+        return Memory.toString();
     }
 
     public void setMemory(MemoryOptions memory) {
@@ -41,19 +45,33 @@ public class CameraModel {
     }
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
     public void setColor(String color) {
-        Color = color;
+        String[] allowedColors = "red,black,blue,purple,orange".split(",");
+
+        ArrayList<String> values = new ArrayList<>(); //create a dynamic series of values
+        values.add("hi");values.add("bye");
+        System.out.println(values.size());
+        values.remove("hi");
+        values.contains("bye");
+
+        //if(color.length() < 3)
+            //throw new IllegalArgumentException("Color must be at least 3 characters");
+
+        if(Arrays.asList(allowedColors).contains(color.toLowerCase()))
+            throw new IllegalArgumentException("Invalid color chosen");
+
+        this.color = color;
     }
 
-    public AvailableBrands getBrand() {
-        return Brand;
+    public String getBrand() {
+        return brand.toString();
     }
 
     public void setBrand(AvailableBrands brand) {
-        Brand = brand;
+        this.brand = brand;
     }
 
     public double getResolution() {
@@ -61,6 +79,8 @@ public class CameraModel {
     }
 
     public void setResolution(double resolution) {
+        if(resolution < 1080)
+            throw new IllegalArgumentException("Invalid resolution");
         this.resolution = resolution;
     }
 
@@ -69,6 +89,18 @@ public class CameraModel {
     }
 
     public void setLensLength(int lensLength) {
+        if(lensLength < 10)
+            throw new IllegalArgumentException("Invalid Lens Length");
         this.lensLength = lensLength;
+    }
+
+    public List<String> getAllBrands(){
+
+        return Arrays.asList(Arrays.toString(AvailableBrands.values()));
+    }
+
+    public List<String> getAllMemoryOptions(){
+
+        return List.of(Arrays.toString(MemoryOptions.values()));
     }
 }

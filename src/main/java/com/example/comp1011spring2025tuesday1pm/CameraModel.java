@@ -94,14 +94,38 @@ public class CameraModel {
         this.lensLength = lensLength;
     }
 
-    public List<String> getAllBrands(){
+    public ArrayList<String> getAllBrands(){
+        /*
+            create a new ArrayList
+                iterate through all values of AvaialbleBrands
+                add each value to the ArrayList variable
+                return the arraylist variable
+                change the signature to ArrayList
 
-        return Arrays.asList(Arrays.toString(AvailableBrands.values()));
+                do the same for MemoryOptions
+
+
+         */
+        //return Arrays.asList(Arrays.toString(AvailableBrands.values()));
+
+        ArrayList<String> values = new ArrayList<>();
+        for(AvailableBrands b : AvailableBrands.values()){
+            values.add(b.toString());
+        }
+        return values;
+
     }
 
-    public List<String> getAllMemoryOptions(){
+    public ArrayList<String> getAllMemoryOptions(){
 
-        return List.of(Arrays.toString(MemoryOptions.values()));
+        //return List.of(Arrays.toString(MemoryOptions.values()));
+
+        ArrayList<String> values = new ArrayList<>();
+        for(MemoryOptions mo : MemoryOptions.values()){
+            values.add(mo.toString());
+        }
+        return values;
+
     }
 
     public CameraModel(){}
@@ -118,5 +142,21 @@ public class CameraModel {
         setBrand(brand);
         setResolution(resolution);
         setLensLength(lensLength);
+    }
+
+    public String comboBoxDisplay(){
+
+        return String.format("%s %s Camera with %s", color, brand, resolution);
+    }
+
+    @Override
+    public String toString() {
+        return "CameraModel{" +
+                "Memory=" + Memory +
+                ", color='" + color + '\'' +
+                ", brand=" + brand +
+                ", resolution=" + resolution +
+                ", lensLength=" + lensLength +
+                '}';
     }
 }

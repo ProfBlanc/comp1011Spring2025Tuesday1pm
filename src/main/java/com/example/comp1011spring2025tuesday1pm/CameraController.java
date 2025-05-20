@@ -1,10 +1,9 @@
 package com.example.comp1011spring2025tuesday1pm;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class CameraController {
 
@@ -28,6 +27,9 @@ public class CameraController {
 
     @FXML
     private TextField txtResolution;
+
+    @FXML
+    private Slider sldPrice;
 
     CameraModel model = new CameraModel();
 
@@ -53,8 +55,48 @@ public class CameraController {
                     System.out.println("You selected index:" + cameraList.getSelectionModel().getSelectedIndex());
                     output.setText(cameraList.getSelectionModel().getSelectedItem());
                 }
+        );
+
+
+        //price slider
+
+        ChangeListener changeListener = (observable, oldValue, newValue) -> {
+            System.out.println("Price: " + newValue);
+            System.out.println("Old Price: " + oldValue);
+        };
+
+//        sldPrice.valueProperty().addListener(
+//                (observable, oldValue, newValue) -> {
+//                    System.out.println("Price: " + newValue);
+//                    System.out.println("Old Price: " + oldValue);
+//                }
+//        );
+
+        //sldPrice.valueProperty().addListener(changeListener);
+
+        //Functional Interface: only 1 abstrace method
+
+
+        //annonymous inner class
+        sldPrice.valueProperty().addListener(
+
+                new ChangeListener<Number>() {
+                    @Override
+                    public void changed(ObservableValue<?extends Number> obervableValue, Number oldValue,
+                                        Number newValue){
+
+                        System.out.println("Price: " + newValue);
+                        System.out.println("Old Price: " + oldValue);
+
+                    }
+                }
+
 
         );
+
+
+        //create a new instance variable in CameraModel: price
+        //once user submits, add the price value to the CameraModel (using setPrice)
     }
 
     @FXML

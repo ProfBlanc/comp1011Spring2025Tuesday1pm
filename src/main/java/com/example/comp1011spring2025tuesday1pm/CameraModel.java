@@ -9,7 +9,7 @@ public class CameraModel {
     /*
 
     Create at least 5 attributes of a Camera
-        (Brand, Pixels, Color, Memory, etc)
+        (Brand, Pixels, Color, memory, etc)
 
         At least 1 enum
         Create getters and setters for all private attributes
@@ -25,7 +25,7 @@ public class CameraModel {
 
      */
     enum MemoryOptions {GB_32, GB_64, GB_128}  //list of possibilities
-    MemoryOptions Memory = MemoryOptions.GB_32;
+    MemoryOptions memory = MemoryOptions.GB_32;
 
     private String color = "Black";
     enum AvailableBrands {CANON, POLAROID, SONY}
@@ -37,11 +37,11 @@ public class CameraModel {
     private int lensLength;
 
     public String getMemory() {
-        return Memory.toString();
+        return memory.toString();
     }
 
     public void setMemory(MemoryOptions memory) {
-        Memory = memory;
+        memory = memory;
     }
 
     public String getColor() {
@@ -49,7 +49,7 @@ public class CameraModel {
     }
 
     public void setColor(String color) {
-        String[] allowedColors = "red,black,blue,purple,orange".split(",");
+        String[] allowedColors = "red,green,black,blue,purple,orange".split(",");
 
         ArrayList<String> values = new ArrayList<>(); //create a dynamic series of values
         values.add("hi");values.add("bye");
@@ -131,7 +131,7 @@ public class CameraModel {
     public CameraModel(){}
 
     public CameraModel(MemoryOptions memory, String color, AvailableBrands brand, double resolution, int lensLength) {
-//        Memory = memory;
+//        memory = memory;
 //        this.color = color;
 //        this.brand = brand;
 //        this.resolution = resolution;
@@ -152,7 +152,7 @@ public class CameraModel {
     @Override
     public String toString() {
         return "CameraModel{" +
-                "Memory=" + Memory +
+                "memory=" + memory +
                 ", color='" + color + '\'' +
                 ", brand=" + brand +
                 ", resolution=" + resolution +

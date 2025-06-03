@@ -60,13 +60,15 @@ public class QuizGameController {
                     System.out.println(selectedName);
                     System.out.println(selectedImage);
 
+                    Participant participant = new Participant(selectedName, selectedImage);
+
                     try{
                         Stage stage = new Stage();
     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("quiz-game-questions-view.fxml"));
 
                         QuizGameQuestionsController controller = new QuizGameQuestionsController();
-                        controller.setNickname(selectedName);
-                        controller.setAvatarImage(selectedImage);
+//                        controller.setNickname(selectedName);
+//                        controller.setAvatarImage(selectedImage);
                         fxmlLoader.setController(controller);
 
                         Scene scene = new Scene(fxmlLoader.load());

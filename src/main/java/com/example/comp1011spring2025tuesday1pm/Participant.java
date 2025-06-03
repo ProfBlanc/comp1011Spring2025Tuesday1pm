@@ -1,11 +1,13 @@
 package com.example.comp1011spring2025tuesday1pm;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 
 public class Participant {
 
     private String name;
-    private String avatar;
+    private Image avatar;
 
     public String getName() {
         return name;
@@ -15,15 +17,15 @@ public class Participant {
         this.name = name;
     }
 
-    public String getAvatar() {
+    public Image getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(String avatar) {
+    public void setAvatar(Image avatar) {
         this.avatar = avatar;
     }
 
-    public Participant(String name, String avatar){
+    public Participant(String name, Image avatar){
         setName(name);
         setAvatar(avatar);
      }

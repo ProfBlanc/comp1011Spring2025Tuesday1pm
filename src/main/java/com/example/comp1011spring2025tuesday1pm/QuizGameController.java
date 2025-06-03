@@ -48,6 +48,20 @@ public class QuizGameController {
         );
 
 
+        btnSubmit.setOnAction(
+                event -> {
+
+                    String selectedName = cbNickname.getSelectionModel().getSelectedItem();
+                    Image selectedImage = imgAvatar.getImage();
+
+                    System.out.println(selectedName);
+                    System.out.println(selectedImage);
+
+                }
+        );
+
     }
+
+
 
 }

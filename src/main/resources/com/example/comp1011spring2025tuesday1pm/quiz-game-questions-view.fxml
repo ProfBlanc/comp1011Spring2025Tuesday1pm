@@ -31,13 +31,13 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="16.0" layoutY="117.0" prefHeight="54.0" prefWidth="346.0" text="Question Text Goes Here" />
+      <Label fx:id="txtQuestion" layoutX="16.0" layoutY="117.0" prefHeight="54.0" prefWidth="346.0" text="Question Text Goes Here" />
       <Label layoutX="385.0" layoutY="108.0" text="Correct Answers" />
       <Label layoutX="387.0" layoutY="135.0" text="Questions Remaining" />
       <Label layoutX="387.0" layoutY="171.0" text="Total Questions" />
-      <Label layoutX="542.0" layoutY="108.0" text="10" />
-      <Label layoutX="542.0" layoutY="135.0" text="10" />
-      <Label layoutX="542.0" layoutY="171.0" text="10" />
+      <Label fx:id="txtCorrectAnswers" layoutX="542.0" layoutY="108.0" text="10" />
+      <Label fx:id="txtQuestionsRemaining" layoutX="542.0" layoutY="135.0" text="10" />
+      <Label fx:id="txtTotalQuestions" layoutX="542.0" layoutY="171.0" text="10" />
       <GridPane layoutX="33.0" layoutY="225.0" prefHeight="158.0" prefWidth="536.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -48,10 +48,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <RadioButton mnemonicParsing="false" text="RadioButton" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.rowIndex="1" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" />
-            <RadioButton mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton fx:id="rbOption1" mnemonicParsing="false" text="RadioButton" />
+            <RadioButton fx:id="rbOption3" mnemonicParsing="false" text="RadioButton" GridPane.rowIndex="1" />
+            <RadioButton fx:id="rbOption2" mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" />
+            <RadioButton fx:id="rbOption4" mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

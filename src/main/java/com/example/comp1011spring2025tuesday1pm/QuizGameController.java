@@ -69,6 +69,7 @@ public class QuizGameController {
                         QuizGameQuestionsController controller = new QuizGameQuestionsController();
 //                        controller.setNickname(selectedName);
 //                        controller.setAvatarImage(selectedImage);
+                        controller.setParticipant(participant);
                         fxmlLoader.setController(controller);
 
                         Scene scene = new Scene(fxmlLoader.load());

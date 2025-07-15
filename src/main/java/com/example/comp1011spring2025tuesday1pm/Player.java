@@ -1,10 +1,13 @@
 package com.example.comp1011spring2025tuesday1pm;
 
+
 public class Player {
-    public int id;
-    public String first_name;
-    public String last_name;
-    public String position;
+
+
+    private int id;
+    private String first_name;
+    private String last_name;
+    private String position;
 
     public String getFirst_name() {
         return first_name;

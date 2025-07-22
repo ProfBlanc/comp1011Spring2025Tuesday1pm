@@ -1,4 +1,4 @@
-package com.example.comp1011spring2025thursdays5pm;
+package com.example.comp1011spring2025tuesday1pm;
 
 import java.io.Console;
 import java.util.Random;

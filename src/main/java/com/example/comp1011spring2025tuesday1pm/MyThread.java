@@ -1,4 +1,4 @@
-package com.example.comp1011spring2025thursdays5pm;
+package com.example.comp1011spring2025tuesday1pm;
 
 public class MyThread extends Thread{
 

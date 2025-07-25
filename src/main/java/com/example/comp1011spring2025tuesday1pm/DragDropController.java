@@ -37,7 +37,7 @@ public class DragDropController {
 
     public DragDropController(){
 
-        maxTimeInSeconds = 20;
+        maxTimeInSeconds = 20 * 2;
         intervalInMS = 100;
         timeBonus = 222;
     }

@@ -5,7 +5,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="layout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="layout" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="com.example.comp1011spring2025tuesday1pm.DragDropController"
+            xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="468.0" layoutY="22.0" prefHeight="18.0" prefWidth="63.0" text="Score">
          <font>

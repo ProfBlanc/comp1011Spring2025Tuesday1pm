@@ -56,7 +56,7 @@ public class Week11 {
                 for(int i = 3; i >= 0; i--){
                     System.out.println(Thread.currentThread().getName() + ": " + i);
                     //Thread.sleep(1000);
-                    Thread.sleep(new Random().nextInt(750, 1000));
+                    Thread.sleep(new Random().nextInt( 1000));
 
                 }
             }
